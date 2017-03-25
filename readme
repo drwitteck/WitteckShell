@@ -1,0 +1,81 @@
+*********************************
+DEREK WITTECK's SHELL HELP MANUAL
+*********************************
+
+Welcome to My Shell. This guide will help you with the features and commands that My Shell supports.
+
+**********************************************************************************************************
+
+This shell supports the following built-in commands:
+
+1) cd <directory> 	Type 'cd' followed by the directory you wish to change to.
+2) clr			Type 'clr' and hit enter to clear the screen.
+3) dir			Type 'dir' to list the contents of the current directory.
+4) environ		Type 'environ' to list all the environment strings.
+5) echo <comment>	Type 'echo' followed by a comment that you wish to display on the screen.
+6) help			Type 'help' to display this manual.
+7) pause		Type 'pause' to pause the operation of the shell until the 'Enter' key is pressed.
+8) quit			Type 'quit' to exit the shell
+
+In addition to these commands, the familiar Linux BASH commands are also availble (ls, date, ps, etc.).
+
+***********************************************************************************************************
+
+Additional shell feature:
+
+1) This shell can take in a batchfile of supported commands and execute them. To use a batchfile type:
+
+	"batchfile" into the command prompt (without the quotation marks).
+
+
+2) I/O Redirection:
+
+	This shell supports redirection of input and output. Redirection works in a few different ways.
+
+	a. A program can take input from a file rather than from the keyboard. 
+		Type "program < inputFile" into the command prompt.
+		This would take input from inputFile and send it to program.
+
+	b. A program can send its output to a file rather than the screen.
+		Type "program > outputFile" into the command prompt.
+		This sends the output of the program to a file rather than the screen.
+
+	c. A program can send its output to a file rather than the screen without overwriting the file.
+		Type "program >> outputFile" into the command prompt.
+		This will append that data sent from the program to the end out the outputFile.
+
+	d. A program can take input from a file and then output the data to a different file.
+		Type "program < inputFile > outputFile.
+
+	Redirection works by redefining stdin or stdout to the user entered file name. When one of the
+	redirection symbols <, >, >> precedes a file name, the shell will substitute the designated file
+	for stdin or stdout.
+
+
+3) Piping:
+
+	This shell supports the use of shell pipes. Pipes is a common mechanism in Linux that allows two or
+	more processes to communicate through interprocess communication. Linux creates processes by using 
+	a command call fork(). The process that will call the fork() command is known as the parent process 
+	and the new process created by the fork() command is known as the child process. In order for the 
+	parent to send a message or data to the child process it must create a pipe.
+	
+	An example of what can be accomplished with pipes is:
+
+	"ls | wc" 
+
+	The pipe symbol "|" joins the output from first command to input of second command.
+	This particular command will count the number of lines output by the ls command (ls lists the
+	contents of a directory and wc, prints a count of newlines, words, and bytes for each input).
+
+
+4) Putting a Process in The Background:
+
+	This shell allows the user to enter a command and have the command sent to the background to run.
+	Then the user is free to enter more commands. Normally when a child process is created and executed
+	the parent process will wait until the child process terminates.
+
+	To send a process to the background type your command followed by the '&' symbol. This will send the
+	command you entered to the background and return you to the prompt to continue entering commands.
+
+	Typing "command&" will send that command to the background and then return you to the prompt.

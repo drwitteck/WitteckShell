@@ -1,0 +1,25 @@
+cd ..
+
+dir practiceCode
+
+echo This is my shell
+
+environ
+
+help
+
+pause
+
+ls
+
+ls -a
+
+ls > test1.txt
+
+ls -a >> test_output2.txt
+
+ls -a -l | wc -l
+
+ls | wc
+
+ps
